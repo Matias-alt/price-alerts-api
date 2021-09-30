@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: MyString
+  schedule: MyString
+  travel_class: MyString
+  price: 1
+  bus_operator: MyString
+  id_alert_price: 1
+
+two:
+  date: MyString
+  schedule: MyString
+  travel_class: MyString
+  price: 1
+  bus_operator: MyString
+  id_alert_price: 1

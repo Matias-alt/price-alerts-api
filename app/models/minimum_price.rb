@@ -1,0 +1,3 @@
+class MinimumPrice < ApplicationRecord
+
+end
