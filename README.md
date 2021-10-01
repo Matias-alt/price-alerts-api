@@ -3,7 +3,8 @@
 Rest api desarrollada con Ruby on Rails, desplegada en Heroku 
 https://price-alerts-api.herokuapp.com/api/v1/
 
-Lista de recursos (endpoints):
+
+# price_alerts endpoints
 
 ### GET /price_alerts <br/>
 este endpoint trae todos los registros de la tabla 'price_alerts'
@@ -94,7 +95,7 @@ este endpoint elimina un registro de la tabla 'price_alerts' segun su id
 
 
 
-MINIMUM_PRICES
+# minimum_prices endpoints
 
 ### GET /minimum_prices/get_process <br/>
 Este endpoint ejecuta un proceso que busca el precio minimo segun la fecha ingresada como parametro, mas los 7 dias siguientes, entregando una lista con un total de 8 resultados
