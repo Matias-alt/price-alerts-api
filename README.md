@@ -93,7 +93,8 @@ BODY:
 ### DELETE /price_alerts/:id <br/>
 este endpoint elimina un registro de la tabla 'price_alerts' segun su id
 
-
+<br/>
+<br/>
 
 # minimum_prices endpoints
 
