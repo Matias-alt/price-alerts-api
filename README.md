@@ -100,7 +100,7 @@ este endpoint elimina un registro de la tabla 'price_alerts' segun su id
 ### GET /minimum_prices/get_process <br/>
 Este endpoint ejecuta un proceso que busca el precio minimo segun la fecha ingresada como parametro, mas los 7 dias siguientes, entregando una lista con un total de 8 resultados
 
-Los parametros que se describena  continuacion son obligatorios.
+Los parametros que se describen a continuacion son obligatorios.
 
 PARAMS:
 
@@ -176,6 +176,75 @@ OUTPUT:
             "busOperator": "Buses Jet Sur"
         }
     ]
+}
+```
+
+### GET /minimum_prices/get_by_alert_id <br/>
+Este endpoint devuelve una lista de precios minimus segun su id de alerta de precio (referenciando a la tabla 'price_alert')
+
+Los parametros que se describen a continuacion son obligatorios.
+
+PARAMS:
+
+```
+alertId: Id de la ciudad de alerta de precio 
+```
+
+EXAMPLE: minimum_prices/get_by_alert_id?alertId=42 <br/>
+
+
+OUTPUT:
+
+```
+[
+    {
+        "id": 2,
+        "date": "2050-01-01",
+        "schedule": "23:06",
+        "travel_class": "SEMI CAMA",
+        "price": 8500,
+        "bus_operator": "Buses Jet Sur",
+        "id_alert_price": 42,
+        "created_at": "2021-09-29T13:47:20.082Z",
+        "updated_at": "2021-09-29T13:47:20.082Z"
+    },
+    {
+        "id": 6,
+        "date": "2050-01-01",
+        "schedule": "23:06",
+        "travel_class": "SEMI CAMA",
+        "price": 10000,
+        "bus_operator": "Buses Jet Sur",
+        "id_alert_price": 42,
+        "created_at": "2021-09-29T15:29:00.500Z",
+        "updated_at": "2021-09-29T15:29:00.500Z"
+    },
+ ....... 
+]
+```
+
+minimum_prices/get_redirect_url?origin=Santiago&destiny=Valdivia&date=2050-01-01
+
+### GET /minimum_prices/get_by_alert_id <br/>
+Este endpoint se encarga de armar y devolver la url que redirijira a la pagina de recorrido.cl 
+
+Los parametros que se describen a continuacion son obligatorios.
+
+PARAMS:
+
+```
+origin: Nombre de la ciudad de origen
+destiny: Nombre de la ciudad de destino
+date: Fecha de salida del viaje
+```
+
+EXAMPLE: minimum_prices/get_by_alert_id?alertId=42 <br/>
+
+OUTPUT:
+
+```
+{
+    "url": "https://demo.recorrido.cl/es/bus/santiago/valdivia/01-01-2050"
 }
 ```
 
