@@ -193,7 +193,6 @@ alertId: Id de la ciudad de alerta de precio
 
 EXAMPLE: minimum_prices/get_by_alert_id?alertId=42 <br/>
 
-
 OUTPUT:
 
 ```
@@ -224,9 +223,9 @@ OUTPUT:
 ]
 ```
 
-minimum_prices/get_redirect_url?origin=Santiago&destiny=Valdivia&date=2050-01-01
 
-### GET /minimum_prices/get_by_alert_id <br/>
+
+### GET /minimum_prices/get_redirect_url <br/>
 Este endpoint se encarga de armar y devolver la url que redirijira a la pagina de recorrido.cl 
 
 Los parametros que se describen a continuacion son obligatorios.
@@ -239,7 +238,8 @@ destiny: Nombre de la ciudad de destino
 date: Fecha de salida del viaje
 ```
 
-EXAMPLE: minimum_prices/get_by_alert_id?alertId=42 <br/>
+EXAMPLE: minimum_prices/get_redirect_url?origin=Santiago&destiny=Valdivia&date=2050-01-01 <br/>
+
 
 OUTPUT:
 
@@ -248,4 +248,44 @@ OUTPUT:
     "url": "https://demo.recorrido.cl/es/bus/santiago/valdivia/01-01-2050"
 }
 ```
+
+
+### POST /minimum_prices <br/>
+este endpoint crea un registro de la tabla 'minimum_prices'
+
+```
+BODY:
+
+{
+    "date": "2021-15-01",
+    "schedule": "09:00",
+    "travel_class": "Semi Cama",
+    "price": 6500,
+    "bus_operator": "Pullman Bus",
+    "id_alert_price": 42
+}
+```
+
+### PUT /minimum_prices/:id <br/>
+este endpoint edita un registro de la tabla 'minimum_prices' segun su id
+
+```
+BODY:
+
+{
+    "date": "2021-15-01",
+    "schedule": "09:00",
+    "travel_class": "Semi Cama",
+    "price": 6500,
+    "bus_operator": "Pullman Bus",
+    "id_alert_price": 42
+}
+```
+
+### DELETE /minimum_prices/:id <br/>
+este endpoint elimina un registro de la tabla 'price_alerts' segun su id
+
+
+
+
 
