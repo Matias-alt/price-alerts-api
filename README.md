@@ -5,7 +5,7 @@ https://price-alerts-api.herokuapp.com/api/v1/
 
 Lista de recursos (endpoints):
 
-# 1- /price_alerts <br/>
+### 1- /price_alerts <br/>
 este endpoint trae todos los registros de la tabla 'price_alerts'
 
 ```
