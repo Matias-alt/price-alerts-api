@@ -3,15 +3,57 @@
 Rest api desarrollada con Ruby on Rails, desplegada en Heroku 
 https://price-alerts-api.herokuapp.com/api/v1/
 
+# cities endpoints
+
+### GET /cities <br/>
+Este endpoint devuelve una lista de ciudades 
+
+OUTPUT:
+
+```
+{
+    "cities": [
+        {
+            "id": 8914,
+            "url_name": "achao",
+            "name": "Achao",
+            "latitude": "-42.472032",
+            "longitude": "-73.489772",
+            "url": "https://demo.recorrido.cl/api/v2/es/cities/8914.json",
+            "country_id": 1
+        },
+        {
+            "id": 10315,
+            "url_name": "aeropuerto-de-calama",
+            "name": "Aeropuerto de Calama",
+            "latitude": "-22.505771",
+            "longitude": "-68.927898",
+            "url": "https://demo.recorrido.cl/api/v2/es/cities/10315.json",
+            "country_id": 1
+        },
+        {
+            "id": 26,
+            "url_name": "aguilares",
+            "name": "Aguilares (Argentina)",
+            "latitude": "-27.431509",
+            "longitude": "-65.614716",
+            "url": "https://demo.recorrido.cl/api/v2/es/cities/26.json",
+            "country_id": 2
+        },
+        
+        .........
+    ]
+ }
+```
 
 # price_alerts endpoints
 
 ### GET /price_alerts <br/>
-este endpoint trae todos los registros de la tabla 'price_alerts'
+Este endpoint trae todos los registros de la tabla 'price_alerts'
 
-```
 OUTPUT:
 
+```
 [
    {
         "id": 78,
@@ -40,11 +82,11 @@ OUTPUT:
 ```
 
 ### GET /price_alerts/:id <br/>
-este endpoint trae un registro de la tabla 'price_alerts' segun su id
+Este endpoint trae un registro de la tabla 'price_alerts' segun su id
 
-```
 OUTPUT:
 
+```
 {
   "id": 79,
   "name": "Viaje al Norte",
@@ -59,11 +101,11 @@ OUTPUT:
 ```
 
 ### POST /price_alerts/:id <br/>
-este endpoint crea un registro de la tabla 'price_alerts'
+Este endpoint crea un registro de la tabla 'price_alerts'
 
-```
 BODY:
 
+```
 {
     "name": "Viaje Monumental",
     "origin": "{\"name\":\"Santiago\", \"id\":9333}",
@@ -75,11 +117,11 @@ BODY:
 ```
 
 ### PUT /price_alerts/:id <br/>
-este endpoint edita un registro de la tabla 'price_alerts' segun su id
+Este endpoint edita un registro de la tabla 'price_alerts' segun su id
 
-```
 BODY:
 
+```
 {
     "name": "Viaje Monumental",
     "origin": "{\"name\":\"Santiago\", \"id\":9333}",
@@ -91,7 +133,7 @@ BODY:
 ```
 
 ### DELETE /price_alerts/:id <br/>
-este endpoint elimina un registro de la tabla 'price_alerts' segun su id
+Este endpoint elimina un registro de la tabla 'price_alerts' segun su id
 
 <br/>
 <br/>
@@ -253,9 +295,9 @@ OUTPUT:
 ### POST /minimum_prices <br/>
 este endpoint crea un registro de la tabla 'minimum_prices'
 
-```
 BODY:
 
+```
 {
     "date": "2021-15-01",
     "schedule": "09:00",
@@ -269,9 +311,9 @@ BODY:
 ### PUT /minimum_prices/:id <br/>
 este endpoint edita un registro de la tabla 'minimum_prices' segun su id
 
-```
 BODY:
 
+```
 {
     "date": "2021-15-01",
     "schedule": "09:00",
