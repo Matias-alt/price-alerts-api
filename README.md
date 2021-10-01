@@ -5,7 +5,7 @@ https://price-alerts-api.herokuapp.com/api/v1/
 
 Lista de recursos (endpoints):
 
-### 1- /price_alerts <br/>
+### GET /price_alerts <br/>
 este endpoint trae todos los registros de la tabla 'price_alerts'
 
 ```
@@ -38,7 +38,7 @@ OUTPUT:
 ]
 ```
 
-### 1- /price_alerts/:id <br/>
+### GET /price_alerts/:id <br/>
 este endpoint trae un registro de la tabla 'price_alerts' segun su id
 
 ```
@@ -56,6 +56,43 @@ OUTPUT:
   "updated_at": "2021-09-30T00:38:30.258Z"
 }
 ```
+
+### POST /price_alerts/:id <br/>
+este endpoint crea un registro de la tabla 'price_alerts'
+
+```
+BODY:
+
+{
+    "name": "Viaje Monumental",
+    "origin": "{\"name\":\"Santiago\", \"id\":9333}",
+    "destiny": "{\"name\":\"Illapel\", \"id\":9076}",
+    "travelClass": "{\"name\":\"Salon Cama\", \"id\":2}",
+    "price": 5500,
+    "departure_date": "29-09-2021"
+}
+```
+
+### PUT /price_alerts/:id <br/>
+este endpoint edita un registro de la tabla 'price_alerts' segun su id
+
+```
+BODY:
+
+{
+    "name": "Viaje Monumental",
+    "origin": "{\"name\":\"Santiago\", \"id\":9333}",
+    "destiny": "{\"name\":\"Illapel\", \"id\":9076}",
+    "travelClass": "{\"name\":\"Salon Cama\", \"id\":2}",
+    "price": 5500,
+    "departure_date": "29-09-2021"
+}
+```
+
+### DELETE /price_alerts/:id <br/>
+este endpoint elimina un registro de la tabla 'price_alerts' segun su id
+
+
 
 
 
